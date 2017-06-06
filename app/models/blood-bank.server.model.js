@@ -3,9 +3,10 @@
 
 // Load the module dependencies
 var mongoose = require('mongoose'),
+    config = require('../../config/config.js'),
 	Schema = mongoose.Schema;
 
-// Define a new 'ArticleSchema'
+// Define a new 'BloodBankSchema'
 var BloodBankSchema = new Schema({
 	id : {type: String},
     state : {type: String},
@@ -27,5 +28,5 @@ var BloodBankSchema = new Schema({
     longitude : {type: String}
 });
 
-// Create the 'Article' model out of the 'ArticleSchema'
-mongoose.model('BloodBank', BloodBankSchema);
+// Create the 'BloodBank' model out of the 'BloodBankSchema'
+mongoose.model(config.bloodBankModel, BloodBankSchema);

@@ -4,7 +4,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var fs = require('fs'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    obj
+    obj,
     config = require('./config/config.js');
 
 
@@ -23,7 +23,7 @@ fs.readFile('BloodBankDetails.js', 'utf8', function(err, data) {
     }
 
     var mongooseSchema = new Schema(schema);
-    var model = mongoose.model(config.modelName, mongooseSchema); //Get model name as function parameter.
+    var model = mongoose.model(config.bloodBankModel, mongooseSchema); //Get model name as function parameter.
     createDefaultData(model, schema, obj.data);
 });
 

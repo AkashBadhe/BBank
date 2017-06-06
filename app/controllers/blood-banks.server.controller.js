@@ -3,7 +3,8 @@
 
 // Load the module dependencies
 var mongoose = require('mongoose'),
-	BloodBank = mongoose.model('BloodBank');
+	config = require('../../config/config.js'),
+	BloodBank = mongoose.model(config.bloodBankModel);
 
 // Create a new error handling controller method
 var getErrorMessage = function(err) {
@@ -41,7 +42,7 @@ exports.create = function(req, res) {
 // Create a new controller method that retrieves a list of bloodBanks
 exports.list = function(req, res) {
 	// Use the model 'find' method to get a list of bloodBanks
-	BloodBank.find().populate('creator', 'firstName lastName fullName').exec(function(err, bloodBanks) {
+	BloodBank.find({}).exec(function(err, bloodBanks) {
 		if (err) {
 			// If an error occurs send the error message
 			return res.status(400).send({

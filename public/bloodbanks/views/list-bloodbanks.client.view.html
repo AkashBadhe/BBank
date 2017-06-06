@@ -1,0 +1,17 @@
+<!-- The list articles view -->
+<section data-ng-controller="BloodbanksController" data-ng-init="find()">
+	<h1>Bloodbanks</h1>
+	<ul>
+		<!-- The list of article -->
+		<li data-ng-repeat="bloodbank in bloodbanks">
+			<a data-ng-href="#!/bloodbanks/{{bloodbank._id}}" data-ng-bind="bloodbank.h_name"></a>
+			<br>
+			<small data-ng-bind="bloodbank.address"></small>
+			<p data-ng-bind="bloodbank.city + ', ' + bloodbank.state"></p>
+		</li>
+	</ul>
+	<!-- If there are no articles in the list, suggest the user's create a new article -->
+	<div data-ng-hide="!bloodbanks || bloodbanks.length">
+		<a href="/#!/bloodbanks/create">Add Bloodbank</a>?
+	</div>
+</section>

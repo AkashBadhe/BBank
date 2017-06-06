@@ -3,7 +3,8 @@
 
 // Set the 'development' environment configuration object
 module.exports = {
-	db: 'mongodb://localhost/mean-development',
+	db: 'mongodb://localhost/BloodBankDb',
+	modelName: 'bloodbank',
 	sessionSecret: 'developmentSessionSecret',
 	facebook: {
 		clientID: 'Facebook Application ID',

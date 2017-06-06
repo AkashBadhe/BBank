@@ -65,8 +65,11 @@ exports.update = function(req, res) {
 	// Get the bloodBank from the 'request' object
 	var bloodBank = req.bloodBank;
 
-	// Update the bloodBank fields
-	bloodBank.h_name = req.body.h_name;
+	for(var key in req.body){
+		if(req.body.hasOwnProperty(key)){
+			bloodBank[key] = req.body[key];	
+		}
+	}
 	
 	// Try saving the updated bloodBank
 	bloodBank.save(function(err) {
@@ -119,11 +122,11 @@ exports.bloodBankByID = function(req, res, next, id) {
 // Create a new controller middleware that is used to authorize an bloodBank operation 
 exports.hasAuthorization = function(req, res, next) {
 	// If the current user is not the creator of the bloodBank send the appropriate error message
-	if (req.bloodBank.creator.id !== req.user.id) {
-		return res.status(403).send({
-			message: 'User is not authorized'
-		});
-	}
+	// if (true || req.bloodBank.creator.id !== req.user.id) { // TODO: Enalbe this check.
+	// 	return res.status(403).send({
+	// 		message: 'User is not authorized'
+	// 	});
+	// }
 
 	// Call the next middleware
 	next();

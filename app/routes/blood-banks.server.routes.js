@@ -12,11 +12,11 @@ module.exports = function(app) {
 	   .post(users.requiresLogin, bloodBanks.create);
 	
 	// Set up the 'articles' parameterized routes
-	app.route('/api/bloodBanks/:bloodBanksId')
+	app.route('/api/bloodBanks/:bloodBankId')
 	   .get(bloodBanks.read)
 	   .put(users.requiresLogin, bloodBanks.hasAuthorization, bloodBanks.update)
 	   .delete(users.requiresLogin, bloodBanks.hasAuthorization, bloodBanks.delete);
 
 	// Set up the 'articleId' parameter middleware   
-	app.param('articleId', bloodBanks.bloodBankByID);
+	app.param('bloodBankId', bloodBanks.bloodBankByID);
 };

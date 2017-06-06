@@ -3,7 +3,8 @@
 
 // Set the 'production' environment configuration object
 module.exports = {
-	db: 'mongodb://localhost/mean-production',
+	db: 'mongodb://localhost/BloodBankDb',
+	modelName: 'bloodbank',
 	sessionSecret: 'productionSessionSecret',
 	facebook: {
 		clientID: 'Facebook Application ID',

@@ -1,0 +1,11 @@
+<!-- The article view -->
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+    <h1 data-ng-bind="bloodbank.h_name"></h1>
+    <!-- Show the editing buttons to the article creator -->
+    <div data-ng-show="authentication.user._id == article.creator._id">
+        <a href="/#!/articles/{{article._id}}/edit">edit</a>
+        <a href="/#!/" data-ng-click="delete();">delete</a>
+    </div>
+
+    <p data-ng-bind="article.content">Other Details</p>
+</section>

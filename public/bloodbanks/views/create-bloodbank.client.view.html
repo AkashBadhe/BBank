@@ -1,0 +1,44 @@
+<!-- The create article view -->
+<section data-ng-controller="BloodbanksController">
+	<h1>New Bloodbank</h1>
+	<!-- The new article form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="title">State</label>
+			<div>
+				<input type="text" data-ng-model="state" id="state" placeholder="State" required>
+			</div>
+		</div>
+		<div>
+			<label for="title">City</label>
+			<div>
+				<input type="text" data-ng-model="city" id="city" placeholder="City" required>
+			</div>
+		</div>
+		<div>
+			<input type="submit">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+</section>
+
+<!-- state: this.state,
+city: this.city,
+district: this.district,
+h_name: this.h_name,
+address: this.address,
+pincode: this.pincode,
+contack: this.contact,
+helpline: this.helpline,
+fax: this.fax,
+category: this.category,
+website: this.website,
+email: this.email,
+blood_component: this.blood_component,
+blood_group: this.blood_group,
+service_time: this.service_time,
+latitude: this.latitude,
+longitude: this.longitude -->

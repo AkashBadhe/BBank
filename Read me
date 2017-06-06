@@ -1,0 +1,9 @@
+Read me
+
+
+Setting proxy on novartis networ for git.
+
+set http_proxy=http://emea-chbs-proxy.eu.novartis.net:2010
+set https_proxy=http://emea-chbs-proxy.eu.novartis.net:2010
+set no_proxy=localhost
+

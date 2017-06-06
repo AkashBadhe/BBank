@@ -7,8 +7,8 @@ module.exports = {
     bloodBankModel: 'bloodbanks',
     sessionSecret: 'developmentSessionSecret',
     facebook: {
-        clientID: 'Facebook Application ID',
-        clientSecret: 'Facebook Application Secret',
+        clientID: '1683963698572532',
+        clientSecret: 'e86de4528e2e963d76e757eed7b5d0d5',
         callbackURL: 'http://localhost:3000/oauth/facebook/callback'
     },
     twitter: {
@@ -17,8 +17,8 @@ module.exports = {
         callbackURL: 'http://localhost:3000/oauth/twitter/callback'
     },
     google: {
-        clientID: 'Google Application ID',
-        clientSecret: 'Google Application Secret',
+        clientID: '55955499503-q7v1p8tnrd9rb7kbj0218popm7dc1559.apps.googleusercontent.com',
+        clientSecret: '1CIrPpWr53K_w5iHvWPPSNU8',
         callbackURL: 'http://localhost:3000/oauth/google/callback'
     }
 };
